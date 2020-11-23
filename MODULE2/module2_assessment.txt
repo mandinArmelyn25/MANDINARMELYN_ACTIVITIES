@@ -1,0 +1,110 @@
+ASSESSMENT
+Skills test: Write a (5) five running java program examples using the different java
+API Specifications.
+ANSWER: 
+1. Add two Numbers
+	public class AddTwoNumbers {
+   	public static void main(String[] args) {
+        
+     	 int num1 = 5, num2 = 15, sum;
+     	 sum = num1 + num2;
+
+     	 System.out.println("Sum of these numbers: "+sum);
+  	 }
+	}
+
+	OUTPUT: Sum of these numbers: 20
+
+2. Convert Char To String and a String to char
+	class CharToStringDemo {
+   	public static void main(String args[])
+   	{
+      	// Method 1: Using toString() method
+     	char ch = 'a';
+      	String str = Character.toString(ch);
+      	System.out.println("String is: "+str);
+ 
+      	// Method 2: Using valueOf() method
+      	String str2 = String.valueOf(ch);
+      	System.out.println("String is: "+str2);
+   	}
+	}
+	OUTPUT: String is: a
+                                String is: a
+
+3. Calculate average using Array
+	public class JavaExample {
+    	public static void main(String[] args) {
+        	double[] arr = {19, 12.89, 16.5, 200, 13.7};
+        	double total = 0;
+
+       	 for(int i=0; i<arr.length; i++){
+        		total = total + arr[i];
+        	}
+        	/* arr.length returns the number of elements 
+         	* present in the array
+         	*/
+        	double average = total / arr.length;
+        
+        	/* This is used for displaying the formatted output
+        	 * if you give %.4f then the output would have 4 digits
+        	 * after decimal point.
+         	*/
+       	 System.out.format("The average is: %.3f", average);
+	    }
+	}
+	OUTPUT: The average is: 52.418
+
+4. Reverse a number using while Loop
+	import java.util.Scanner;
+class ReverseNumberWhile
+{
+   public static void main(String args[])
+   {
+      int num=0;
+      int reversenum =0;
+      System.out.println("Input your number and press enter: ");
+      //This statement will capture the user input
+      Scanner in = new Scanner(System.in);
+      //Captured input would be stored in number num
+      num = in.nextInt();
+      //While Loop: Logic to find out the reverse number
+      while( num != 0 )
+      {
+          reversenum = reversenum * 10;
+          reversenum = reversenum + num%10;
+          num = num/10;
+      }
+
+      System.out.println("Reverse of input number is: "+reversenum);
+   }
+}
+	Output: Input your number and press enter: 
+	145689
+	Reverse of input number is: 986541
+
+5. read the number entered by user
+	import java.util.Scanner;
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        /* This reads the input provided by user
+         * using keyboard
+         */
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter any number: ");
+
+        // This method reads the number provided using keyboard
+        int num = scan.nextInt();
+
+        // Closing Scanner after the use
+        scan.close();
+        
+        // Displaying the number 
+        System.out.println("The number entered by user: "+num);
+    }
+}
+	Output: Enter any number: 101
+		The number entered by user: 101
