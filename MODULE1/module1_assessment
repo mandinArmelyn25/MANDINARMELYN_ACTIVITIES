@@ -1,0 +1,159 @@
+1. Write your own version of arraycopy for int arrays.
+Ans:  public static void main(String[] args) {
+        int[] source = {1,2,3,4,5,6,7,8,9};
+        int[] source1 = {1,2,3};
+        int[] destination= null;
+        System.out.println("Source array = "+Arrays.toString(source));
+        
+        destination = copyFirstFiveFieldsOfArrayUsingSystem(source);
+        System.out.println("Copy First five elements of array if available. Result array = "+Arrays.toString(destination));
+        
+        destination = copyFirstFiveFieldsOfArrayUsingSystem(source1);
+        System.out.println("Copy First five elements of array if available. Result array = "+Arrays.toString(destination));
+        
+        destination = copyFullArrayUsingSystem(source);
+        System.out.println("Copy full array using System.copyarray() function. Result array = "+Arrays.toString(destination));
+        
+        destination = copyFullArrayUsingClone(source);
+        System.out.println("Copy full array using clone() function. Result array = "+Arrays.toString(destination));
+        
+        destination = copyFullArrayUsingArrayCopyOf(source);
+        System.out.println("Copy full array using Arrays.copyOf() function. Result array = "+Arrays.toString(destination));
+        
+        destination = copyLastThreeUsingArrayCopyOfRange(source);
+        System.out.println("Copy last three elements using Arrays.copyOfRange() function. Result array = "+Arrays.toString(destination));
+    }
+    private static int[] copyFullArrayUsingArrayCopyOf(int[] source) {
+        return Arrays.copyOf(source, source.length);
+    }
+    private static int[] copyLastThreeUsingArrayCopyOfRange(int[] source) {
+        return Arrays.copyOfRange(source, source.length-3, source.length);
+    }
+    private static int[] copyFullArrayUsingClone(int[] source) {
+        return source.clone();
+    }
+    private static int[] copyFullArrayUsingSystem(int[] source) {
+        int[] temp=new int[source.length];
+        System.arraycopy(source, 0, temp, 0, source.length);
+        return temp;
+    }
+    private static int[] copyFirstFiveFieldsOfArrayUsingSystem(int[] source) {
+        if(source.length > 5){
+            int[] temp=new int[5];
+            System.arraycopy(source, 0, temp, 0, 5);
+            return temp;
+        }else{
+            int[] temp=new int[source.length];
+            System.arraycopy(source, 0, temp, 0, source.length);
+            return temp;
+        }
+        
+    }
+
+}
+
+
+2. write a java program to print the following grid using array.
+answ:  int [][]a = new int[10][10];    
+ for(int i = 0; i < 10; i++)
+   {
+      for(int j = 0; j < 10; j++)
+      {
+         System.out.printf("%2d ", a[i][j]);
+      }
+      System.out.println();
+   }
+
+3. write a java program to calculate the average value of  array elements.
+answ:     public static void main(String[] args) {
+        int[] numbers = new int[]{20, 30, 25, 35, -16, 60, -100};
+       //calculate sum of all array elements
+       int sum = 0;
+       for(int i=0; i < numbers.length ; i++)
+        sum = sum + numbers[i];
+       //calculate average value
+        double average = sum / numbers.length;
+        System.out.println("Average value of the array elements is : " + average); 
+   }
+    }
+
+4. write a java program to read a string presents in another given string.
+Answ: public static void main(String[] args) {
+       {
+        String str1 = "Armelyn Mandins";
+        String str2 = "Armelyn Mandin";
+        
+        String end_str = "n";
+
+       
+        boolean ends1 = str1.endsWith(end_str);
+        boolean ends2 = str2.endsWith(end_str);
+
+    
+        System.out.println("\"" + str1 + "\" ends with " +
+            "\"" + end_str + "\"? " + ends1);
+        System.out.println("\"" + str2 + "\" ends with " +
+            "\"" + end_str + "\"? " + ends2);
+    }
+5. write a java program to remove duplicate characters from a given strin presents in another given string.
+Answ: import java.util.*;
+public class JavaApplication27 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+  String str1 = "the quick brown fox";
+  String str2 = "queen";
+  System.out.println("The given string is: " + str1);
+  System.out.println("The given mask string is: " + str2);
+  char arr[] = new char[str1.length()];
+  char[] mask = new char[256];
+  for (int i = 0; i < str2.length(); i++)
+   mask[str2.charAt(i)]++;
+  System.out.println("\nThe new string is: ");
+  for (int i = 0; i < str1.length(); i++) {
+   if (mask[str1.charAt(i)] == 0)
+    System.out.print(str1.charAt(i));
+  }
+ }
+}
+
+6. write a java program to check if a file or directory specified by path name exists or not.
+Answ: import java.io.File;
+public class JavaApplication28 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        File my_file_dir = new File("/home/students/xyz.txt");
+         if (my_file_dir.exists()) 
+           {
+            System.out.println("The directory or file exists.\n");
+           } 
+         else
+          {
+            System.out.println("The directory or file does not exist.\n");
+          }
+       }
+  }
+
+7. write a java program to get a list of file/directory names from the given.
+Answ: import java.io.File;
+import java.util.Date;
+public class JavaApplication29 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        File file = new File("/home/students/");
+        String[] fileList = file.list();
+        for(String name:fileList){
+            System.out.println(name);
+        }
+    }
+}

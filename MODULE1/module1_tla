@@ -1,0 +1,91 @@
+A.) Misconception Check:
+	How the OOP works in arrays, tables, string and files manipulation?
+answer: 
+	Object Oriented programming (OOP) is a programming paradigm that relies on the concept of classes and objects. It is used to structure a software program into simple, reusable pieces of code blueprints (usually called classes), which are used to create individual instances of objects.
+
+B.) other class and methods
+1. List down the other class and methods of string, file, array and table manipulation
+on the table below.
+	        STRING	         
+	class	    method
+          public char charAt(int index)
+public String concat(String s)
+public boolean equalsIgnoreCase(String s)
+public int length()
+public String replace(char old, char new)
+public String substring(int begin)/ public String substring(int begin, int end)
+public String toLowerCase(
+
+
+ARRAY	        
+ class	method
+
+
+
+
+ TABLE      
+ class	method
+
+
+
+FILE
+class 	method
+
+
+D.ELABORATE: Coding
+Write a java program that uses OOP technique:
+ANSWER: private final String manufacturer;
+	private final String operating_system;
+	public String model;
+	private final int cost;
+
+	Mobile(String man, String o,String m, int c){
+		this.manufacturer = man;
+		this.operating_system=o;
+		this.model=m;
+		this.cost=c;
+	}
+	
+	public String getModel(){
+		return this.model;
+
+1. Create another class and methods that returning a charAt() and indexOf()
+manipulated String.
+
+ANSWER: public static void main(String[] args) {
+           String str1 = "Rock";
+String str2 = "Star";
+String str3 = str1.concat(str2);
+
+System.out.println(str3);
+String str4 = str1 + str2;
+System.out.println(str4);
+
+2. Create another class and methods that convert and return as ArrayList from
+array data.
+
+ANSWER: import java.util.Arrays; 
+import java.util.ArrayList;
+public class JavaApplication31 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void func1(int arr[]) 
+    { 
+        ArrayList<Integer> array_list =  
+                new ArrayList<Integer>(); 
+
+        for (int i = 0; i < arr.length; i++) 
+            array_list.add(new Integer(arr[i])); 
+        System.out.print(array_list); 
+    } 
+  
+    public static void main(String[] args) 
+    { 
+  
+        int array[] = { 1, 2, 3, 4, 5 }; 
+        func1(array); 
+    } 
+} 
+
